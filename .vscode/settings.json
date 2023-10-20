@@ -10,6 +10,11 @@
         "chrono": "cpp",
         "random": "cpp",
         "limits": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "deque": "cpp",
+        "*.tcc": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "compare": "cpp"
     }
 }

@@ -10,9 +10,9 @@ class MarketDataReader {
             startDateTime = 0;
             endDateTime = 0;
             // $Edit Filename here
-            marketFilename = "smallmarketdata.csv";
+            marketFilename = "../data/marketdata.csv";
             // $Edit Filename here
-            tradeFilename = "smalltradedata.csv";
+            tradeFilename = "tradedata.csv";
         }
 
         void init(unsigned long long startDateTime, unsigned long long endDateTime) {
@@ -41,8 +41,8 @@ class MarketDataReader {
         void init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketFilename, std::string tradeFilename) {
             this->startDateTime = startDateTime;
             this->endDateTime = endDateTime;
-            this->marketFilename = marketFilename;
-            this->tradeFilename = tradeFilename;
+            this->marketFilename = "../data/" + marketFilename;
+            this->tradeFilename = "../data/" + tradeFilename;
             marketFile.open(marketFilename,std::ios::in);
             if(!marketFile.is_open()) {
                 std::cerr << "Failed to open file: " << marketFilename << std::endl;
