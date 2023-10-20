@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 
 #ifndef ONLINE_JUDGE
-#define debug(x) std::cerr << #x <<" "; _print(x); std::cerr << endl;
-#define deb(x,n) std::cerr << #x <<" "; _print(x,n); std::cerr << endl;
+#define debug(x) std::cerr << #x <<" "; _print(x); std::cerr << std::endl;
+#define deb(x,n) std::cerr << #x <<" "; _print(x,n); std::cerr << std::endl;
 #else
 #define debug(x)
 #define deb(x,n)
