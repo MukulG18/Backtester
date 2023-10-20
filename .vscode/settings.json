@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "iostream": "cpp",
+        "string": "cpp",
+        "format": "cpp",
+        "map": "cpp",
+        "bitset": "cpp",
+        "set": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
+    }
+}
