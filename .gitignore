@@ -1,0 +1,6 @@
+# Exclude log files
+/logs/
+
+# Exclude data and resource files
+/data/
+/resources/
