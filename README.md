@@ -157,6 +157,10 @@ To get a copy of the project on your local machine, use the following command:
 git clone https://github.com/MukulG18/Backtester.git
 ```
 
+### Customizing Strategy:
+
+Before building, if you want to modify the list of instruments and timers that the strategy focuses on, you can do so by editing the constructor of the `Strategy` class located in: `src/BacktesterComponents.cpp`
+
 ### Building:
 
 1. Navigate to the root directory of the project.
