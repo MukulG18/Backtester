@@ -73,13 +73,11 @@ void TradeData::setAggressor(bool aggressor) {
 }
 
 Event::Event() {
-    marketPointer = nullptr;
-    tradePointer = nullptr;
+    
 }
 
 Event::~Event() {
-    delete marketPointer;
-    delete tradePointer;
+    
 }
 
 void Event::setInstrumentIndex(int instrumentIndex) {
@@ -106,20 +104,20 @@ eventType Event::getEvent() {
     return event;
 }
 
-void Event::setPointer(MarketData* marketPointer) {
+void Event::setPointer(MarketData marketPointer) {
     setEvent(market);
     this->marketPointer = marketPointer;
 }
 
-void Event::setPointer(TradeData* tradePointer) {
+void Event::setPointer(TradeData tradePointer) {
     setEvent(trade);
     this->tradePointer = tradePointer;
 }
 
-void Event::getPointer(MarketData* &marketPointer) {
+void Event::getPointer(MarketData &marketPointer) {
     marketPointer = this->marketPointer;
 }
 
-void Event::getPointer(TradeData* &tradePointer) {
+void Event::getPointer(TradeData &tradePointer) {
     tradePointer = this->tradePointer;
 }

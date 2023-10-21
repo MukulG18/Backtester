@@ -28,9 +28,9 @@ private:
 
 public:
     MarketDataReader();
-    void init(unsigned long long startDateTime, unsigned long long endDateTime);
-    void init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketfile, std::string tradefile);
-    bool getNextEvent(Event* &event);
+    bool init(unsigned long long startDateTime, unsigned long long endDateTime);
+    bool init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketfile, std::string tradefile);
+    bool getNextEvent(Event &event);
 };
 
 class PortfolioManager {
@@ -100,7 +100,7 @@ private:
     long long startDateTime;
     long long endDateTime;
     long long currentTime;
-    Event* event;
+    Event event;
 
     void initDateTime(std::string date);
     void stop();

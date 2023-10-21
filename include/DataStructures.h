@@ -62,8 +62,8 @@ class Event {
         unsigned long long timeStamp;
         int instrumentIndex;
         eventType event;
-        MarketData* marketPointer;
-        TradeData* tradePointer;
+        MarketData marketPointer;
+        TradeData tradePointer;
     
     public:
         Event();
@@ -75,8 +75,8 @@ class Event {
         unsigned long long getTimeStamp();
         void setEvent(eventType event);
         eventType getEvent();
-        void setPointer(MarketData* marketPointer);
-        void setPointer(TradeData* tradePointer);
-        void getPointer(MarketData* &marketPointer);
-        void getPointer(TradeData* &tradePointer);
+        void setPointer(MarketData marketPointer);
+        void setPointer(TradeData tradePointer);
+        void getPointer(MarketData &marketPointer);
+        void getPointer(TradeData &tradePointer);
 };

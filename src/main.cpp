@@ -756,8 +756,8 @@
 // };
 
 int main() {
-    freopen("../logs/output.txt","w",stdout);
-    freopen("../logs/error.txt","w",stderr);
+    freopen("logs/output.txt","w",stdout);
+    freopen("logs/error.txt","w",stderr);
     std::string date;
     // $Enter the date in format (YYYY-MM-DD)
     std::cin >> date;

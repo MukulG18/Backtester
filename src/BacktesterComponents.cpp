@@ -138,35 +138,36 @@ MarketDataReader::MarketDataReader() {
     startDateTime = 0;
     endDateTime = 0;
     // $Edit Filename here
-    marketFilename = "../data/marketdata.csv";
+    marketFilename = "data/marketdata.csv";
     // $Edit Filename here
-    tradeFilename = "../data/tradedata.csv";
+    tradeFilename = "data/tradedata.csv";
 }
 
-void MarketDataReader::init(unsigned long long startDateTime, unsigned long long endDateTime) {
+bool MarketDataReader::init(unsigned long long startDateTime, unsigned long long endDateTime) {
     this->startDateTime = startDateTime;
     this->endDateTime = endDateTime;
     marketFile.open(marketFilename,std::ios::in);
     if(!marketFile.is_open()) {
         std::cerr << "Failed to open file: " << marketFilename << std::endl;
-        return;
+        return false;
     }
     tradeFile.open(tradeFilename,std::ios::in);
     if(!tradeFile.is_open()) {
         std::cerr << "Failed to open file: " << tradeFilename << std::endl;
-        return;
+        return false;
     }
     if(!marketFileReady()) {
         std::cerr << "Error in Setting Market File Ready" << std::endl;
-        return;
+        return false;
     }
     if(!tradeFileReady()) {
         std::cerr << "Error in Setting Trade File Ready" << std::endl;
-        return;
+        return false;
     }
+    return true;
 }
 
-void MarketDataReader::init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketfile, std::string tradefile) {
+bool MarketDataReader::init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketfile, std::string tradefile) {
     this->startDateTime = startDateTime;
     this->endDateTime = endDateTime;
     this->marketFilename = marketfile;
@@ -174,53 +175,53 @@ void MarketDataReader::init(unsigned long long startDateTime, unsigned long long
     marketFile.open(marketFilename,std::ios::in);
     if(!marketFile.is_open()) {
         std::cerr << "Failed to open file: " << marketFilename << std::endl;
-        return;
+        return false;
     }
     tradeFile.open(tradeFilename,std::ios::in);
     if(!tradeFile.is_open()) {
         std::cerr << "Failed to open file: " << tradeFilename << std::endl;
-        return;
+        return false;
     }
     if(!marketFileReady()) {
         std::cerr << "Error in Setting Market File Ready" << std::endl;
-        return;
+        return false;
     }
     if(!tradeFileReady()) {
         std::cerr << "Error in Setting Trade File Ready" << std::endl;
-        return;
+        return false;
     }
+    return true;
 }
 
-bool MarketDataReader::getNextEvent(Event* &event) {
+bool MarketDataReader::getNextEvent(Event &event) {
     if(tradedataRow.getTimeStamp() >= endDateTime && marketdataRow.getTimeStamp() >= endDateTime) {
         return false;
     }
-    event = new Event();
     if(tradedataRow.getTimeStamp()<marketdataRow.getTimeStamp()) {
-        TradeData* traderow = new TradeData();
-        traderow->setTimeStamp(tradedataRow.getTimeStamp());
-        traderow->setInstrumentIndex(tradedataRow.getInstrumentIndex());
-        traderow->setPrice(tradedataRow.getPrice());
-        traderow->setSize(tradedataRow.getSize());
-        traderow->setAggressor(tradedataRow.getAggressor());
-        event->setEvent(trade);
-        event->setPointer(traderow);
-        event->setTimeStamp(tradedataRow.getTimeStamp());
-        event->setInstrumentIndex(tradedataRow.getInstrumentIndex());
+        // TradeData* traderow = new TradeData();
+        // traderow->setTimeStamp(tradedataRow.getTimeStamp());
+        // traderow->setInstrumentIndex(tradedataRow.getInstrumentIndex());
+        // traderow->setPrice(tradedataRow.getPrice());
+        // traderow->setSize(tradedataRow.getSize());
+        // traderow->setAggressor(tradedataRow.getAggressor());
+        event.setEvent(trade);
+        event.setPointer(tradedataRow);
+        event.setTimeStamp(tradedataRow.getTimeStamp());
+        event.setInstrumentIndex(tradedataRow.getInstrumentIndex());
         readTradeData();
     }
     else {
-        MarketData* marketrow = new MarketData();
-        marketrow->setTimeStamp(marketdataRow.getTimeStamp());
-        marketrow->setInstrumentIndex(marketdataRow.getInstrumentIndex());
-        marketrow->setBidPrice(marketdataRow.getBidPrice());
-        marketrow->setBidSize(marketdataRow.getBidSize());
-        marketrow->setAskPrice(marketdataRow.getAskPrice());
-        marketrow->setAskSize(marketdataRow.getAskSize());
-        event->setEvent(market);
-        event->setPointer(marketrow);
-        event->setTimeStamp(marketdataRow.getTimeStamp());
-        event->setInstrumentIndex(marketdataRow.getInstrumentIndex());
+        // MarketData* marketrow = new MarketData();
+        // marketrow->setTimeStamp(marketdataRow.getTimeStamp());
+        // marketrow->setInstrumentIndex(marketdataRow.getInstrumentIndex());
+        // marketrow->setBidPrice(marketdataRow.getBidPrice());
+        // marketrow->setBidSize(marketdataRow.getBidSize());
+        // marketrow->setAskPrice(marketdataRow.getAskPrice());
+        // marketrow->setAskSize(marketdataRow.getAskSize());
+        event.setEvent(market);
+        event.setPointer(marketdataRow);
+        event.setTimeStamp(marketdataRow.getTimeStamp());
+        event.setInstrumentIndex(marketdataRow.getInstrumentIndex());
         readMarketData();
     }
     return true;
@@ -473,61 +474,59 @@ void OrderManagementSystem::run() {
     while(currentTime<endDateTime) {
         // OMS asks event from the MDR
         if(mdr.getNextEvent(event)) {
-            long long differenceInTime = event->getTimeStamp()-currentTime;
+            long long differenceInTime = event.getTimeStamp()-currentTime;
             // onTimer() is called for all timer updates
             for(auto timer:timers) {
                 long long hitsOnTimer = differenceInTime/timer;
                 for(int i=0; i<hitsOnTimer; i++) {
                     currentStrategy.onTimer();
                 }
-                if((event->getTimeStamp()%timer)<(currentTime%timer)) {
+                if((event.getTimeStamp()%timer)<(currentTime%timer)) {
                     currentStrategy.onTimer();
                 }
             }
             // Check if data is on the list of interesting Instruments
-            if(instruments.count(event->getInstrumentIndex()) <= 0) {
+            if(instruments.count(event.getInstrumentIndex()) <= 0) {
                 continue;
             }
-            if(event->getEvent() == market) {
-                MarketData* eventData;
-                event->getPointer(eventData);
+            if(event.getEvent() == market) {
+                MarketData eventData;
+                event.getPointer(eventData);
                 // OMS stores the current market state on each Instrument
-                if(eventData->getBidSize()>0) {
-                    orderBook.addOrder(eventData->getInstrumentIndex(),buy,eventData->getBidPrice(),eventData->getBidSize());
+                if(eventData.getBidSize()>0) {
+                    orderBook.addOrder(eventData.getInstrumentIndex(),buy,eventData.getBidPrice(),eventData.getBidSize());
                 }
-                if(eventData->getAskSize()>0) {
-                    orderBook.addOrder(eventData->getInstrumentIndex(),sell,eventData->getAskPrice(),eventData->getAskSize());
+                if(eventData.getAskSize()>0) {
+                    orderBook.addOrder(eventData.getInstrumentIndex(),sell,eventData.getAskPrice(),eventData.getAskSize());
                 }
-                debug(strategyManager.viewBuyOrder(eventData->getInstrumentIndex()).size());
-                debug(strategyManager.viewSellOrder(eventData->getInstrumentIndex()));
+                debug(strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size());
+                debug(strategyManager.viewSellOrder(eventData.getInstrumentIndex()));
                 // OMS makes a callback on Strategy onMarketDataUpdate()
-                currentStrategy.onMarketDataUpdate(eventData->getInstrumentIndex());
+                currentStrategy.onMarketDataUpdate(eventData.getInstrumentIndex());
             }
             else {
-                TradeData* eventData;
-                event->getPointer(eventData);
+                TradeData eventData;
+                event.getPointer(eventData);
                 // OMS stores the current market state on each Instrument
-                orderBook.Trade(eventData->getInstrumentIndex(),eventData->getPrice(),eventData->getSize(),eventData->getAggressor());
+                orderBook.Trade(eventData.getInstrumentIndex(),eventData.getPrice(),eventData.getSize(),eventData.getAggressor());
                 // OMS makes a callback on Strategy onTradePrint()
-                currentStrategy.onTradePrint(eventData->getInstrumentIndex());
+                currentStrategy.onTradePrint(eventData.getInstrumentIndex());
             }
             // OMS tries to match the orders by strategy
             std::vector<std::pair<orderType,std::pair<int,int>>> matchedOrder;
-            strategyManager.matchOrder(event->getInstrumentIndex(),matchedOrder);
+            strategyManager.matchOrder(event.getInstrumentIndex(),matchedOrder);
             debug(matchedOrder);
             // If an order is matched OMS informs the strategy by calling onFill()
             for(auto order:matchedOrder) {
-                currentStrategy.onFill(event->getInstrumentIndex(), order.first, order.second.first, order.second.second);
+                currentStrategy.onFill(event.getInstrumentIndex(), order.first, order.second.first, order.second.second);
             }
-            currentTime = event->getTimeStamp();
+            currentTime = event.getTimeStamp();
             debug(currentTime);
         }
         else {
             break;
         }
-        delete event;
     }
-    delete event;
     stop();
 }
 
@@ -543,6 +542,8 @@ void OrderManagementSystem::start(std::string date) {
     currentStrategy.init(instruments,timers,&strategyManager);
     orderBook.init(instruments);
     strategyManager.init(instruments,&orderBook);
-    mdr.init(startDateTime,endDateTime);
+    if(!mdr.init(startDateTime,endDateTime)) {
+        return;
+    }
     run();
 }

@@ -4,3 +4,6 @@
 # Exclude data and resource files
 /data/
 /resources/
+
+# Exclude build artifacts
+/build/
