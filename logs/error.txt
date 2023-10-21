@@ -1,1 +1,208 @@
-
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ ]
+choice 2
+instrumentIndex 15
+matchedOrder [ ]
+currentTime 1654227900021557388
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ ]
+choice 2
+instrumentIndex 0
+matchedOrder [ ]
+currentTime 1654227900021589720
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ ]
+choice 1
+instrumentIndex 25
+strategyOrder[instrumentIndex].size() 1
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{117565,100}} ]
+currentTime 1654227900021605692
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1688865,2800} ]
+choice 1
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 1
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1664665,100}} ]
+currentTime 1654227900021608656
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,500} {1688865,2800} ]
+choice 2
+instrumentIndex 0
+matchedOrder [ {1,{1664665,100}} ]
+currentTime 1654227900021678584
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 2
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,1000} {1688865,2800} ]
+choice 1
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 2
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1670605,100}} {1,{1670605,100}} ]
+currentTime 1654227900022460276
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {230000,2800} ]
+choice 0
+instrumentIndex 15
+strategyOrder[instrumentIndex].size() 1
+strategyOrder[instrumentIndex].front() {0,{10,100}}
+matchedOrder [ ]
+currentTime 1654227900022582200
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 3
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,1500} {1688865,2800} ]
+choice 0
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 3
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1672605,100}} {1,{1672605,100}} ]
+currentTime 1654227900022587360
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 3
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,2100} {1688865,2800} ]
+choice 1
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 3
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1672605,100}} {1,{1672605,100}} {1,{1672605,100}} ]
+currentTime 1654227900022601964
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 4
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,2700} {1688865,2800} ]
+choice 2
+instrumentIndex 0
+matchedOrder [ {1,{1675000,100}} {1,{1675000,100}} {1,{1675000,100}} ]
+currentTime 1654227900022642140
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 5
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,3300} {1688865,2800} ]
+choice 2
+instrumentIndex 0
+matchedOrder [ {1,{1675015,100}} {1,{1675015,100}} {1,{1675015,100}} ]
+currentTime 1654227900022715320
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 6
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,3900} {1688865,2800} ]
+choice 2
+instrumentIndex 0
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900022773784
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 6
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,4500} {1688865,2800} ]
+choice 1
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 4
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900022790364
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 6
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,5100} {1688865,2800} ]
+choice 0
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 5
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900022800668
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 7
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1679000,5700} {1688865,2800} ]
+choice 1
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 5
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900022883504
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {230000,5600} ]
+choice 2
+instrumentIndex 15
+matchedOrder [ ]
+currentTime 1654227900023234300
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ ]
+choice 1
+instrumentIndex 25
+strategyOrder[instrumentIndex].size() 2
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{117565,100}} {1,{117565,100}} ]
+currentTime 1654227900023322348
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 1
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {229995,1700} {230000,5600} ]
+choice 2
+instrumentIndex 15
+matchedOrder [ ]
+currentTime 1654227900023761880
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 7
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1676600,600} {1679000,5700} {1688865,2800} ]
+choice 0
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 6
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} ]
+currentTime 1654227900024002136
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 0
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {800,2500} ]
+choice 0
+instrumentIndex 100
+strategyOrder[instrumentIndex].size() 1
+strategyOrder[instrumentIndex].front() {0,{10,100}}
+matchedOrder [ ]
+currentTime 1654227900024432204
+strategyManager.viewBuyOrder(eventData.getInstrumentIndex()).size() 7
+strategyManager.viewSellOrder(eventData.getInstrumentIndex()) [ {1676600,1200} {1679000,5700} {1688865,2800} ]
+choice 0
+instrumentIndex 0
+strategyOrder[instrumentIndex].size() 6
+strategyOrder[instrumentIndex].front() {1,{10,100}}
+matchedOrder [ {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} {1,{1676150,100}} ]
+currentTime 1654227900024470228
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900024480752
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900025490296
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026024244
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026156912
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026641528
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026706028
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026840408
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900026978208
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900027686116
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031121524
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031126876
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031131556
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031491292
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031595644
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031599952
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031604620
+matchedOrder [ {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} {1,{1676150,50}} ]
+currentTime 1654227900031609320
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900032576500
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900032581328
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900032587312
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032595700
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032599540
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032603592
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032607552
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032638588
+matchedOrder [ {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} {1,{1675505,0}} ]
+currentTime 1654227900032656188
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900034757748
+matchedOrder [ {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} {1,{1675500,100}} ]
+currentTime 1654227900035720952

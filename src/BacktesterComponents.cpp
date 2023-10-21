@@ -240,6 +240,7 @@ bool PortfolioManager::addPosition(int instrumentIndex, int size) {
 
 void PortfolioManager::printPortfolio() {
     std::cout << "Portfolio" << std::endl;
+    std::cout << "Instrument" << "  " << "Position" << std::endl;
     for(auto instrument:stocksHeld) {
         std::cout << instrument.first << "  " << instrument.second << std::endl;
     }
