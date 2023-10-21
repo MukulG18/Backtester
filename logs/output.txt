@@ -1,3 +1,6 @@
 Portfolio
-0  -10600
-25  -300
+Instrument  Position
+0  -14950
+15  -900
+25  0
+100  0

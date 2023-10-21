@@ -39,6 +39,7 @@ private:
 
 public:
     PortfolioManager();
+    bool init(std::vector<int> instruments);
     bool addPosition(int instrumentIndex, int quantity);
     void printPortfolio();
 };

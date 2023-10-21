@@ -233,6 +233,13 @@ PortfolioManager::PortfolioManager() {
 
 }
 
+bool PortfolioManager::init(std::vector<int> instruments) {
+    for(auto instrument:instruments) {
+        stocksHeld[instrument] = 0;
+    }
+    return true;
+}
+
 bool PortfolioManager::addPosition(int instrumentIndex, int size) {
     stocksHeld[instrumentIndex] += size;
     return true;
@@ -404,6 +411,7 @@ void Strategy::init(std::set<int>& instruments, std::vector<long long>& timers, 
     for(auto instrument:this->instruments) {
         instruments.insert(instrument);
     }
+    portfolio.init(this->instruments);
     timers = this->timers;
     this->strategyManager = strategyManager;
 }
