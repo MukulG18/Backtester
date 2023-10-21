@@ -170,8 +170,8 @@ bool MarketDataReader::init(unsigned long long startDateTime, unsigned long long
 bool MarketDataReader::init(unsigned long long startDateTime, unsigned long long endDateTime, std::string marketfile, std::string tradefile) {
     this->startDateTime = startDateTime;
     this->endDateTime = endDateTime;
-    this->marketFilename = marketfile;
-    this->tradeFilename = tradefile;
+    this->marketFilename = "data/" + marketfile;
+    this->tradeFilename = "data/" + tradefile;
     marketFile.open(marketFilename,std::ios::in);
     if(!marketFile.is_open()) {
         std::cerr << "Failed to open file: " << marketFilename << std::endl;
